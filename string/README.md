@@ -10,7 +10,7 @@ std::string a = "text";
 std::string b = a; // copy a into b
 ```
 
-## Sort-String
+## Char-to-String
 1. operator += 
 ```
 char c = 'A';
