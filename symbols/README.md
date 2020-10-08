@@ -5,9 +5,9 @@ Table of Contents
 ## Pointer_Referernce
 #### Pointer (\*) and Address-of Operator (&)
 The declaration of pointers follows this syntax:\
-<a>		type * name; </a>\ 
-where type is the data type pointed to by the pointer. \
-This type is not the type of the pointer itself, but the type of the data the pointer points to.\
+	type * name;\ 
+where type is the data type pointed to by the pointer.\
+This type is not the type of the pointer itself, but the type of the data the pointer points to.
 ```
 int* ptr = nullptr; // Declaring pointer
 int x = 5;
