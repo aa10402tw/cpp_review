@@ -1,20 +1,7 @@
+# top-most EditorConfig file
 root = true
-
+ 
+# all files
 [*]
-charset = utf-8
-indent_style = space
-
-[BUILD]
+indent_style = tab
 indent_size = 4
-
-[CMakeLists.*]
-indent_size = 4
-
-[*.h,*.cc, *cpp]
-indent_size = 2
-
-[*.md]
-indent_size = 2
-
-[*.sh]
-indent_size = 2
