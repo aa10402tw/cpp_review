@@ -50,7 +50,7 @@ std::istringstream iss(line);
 while(iss >> num) nums.push_back(num);
 
 /* Get String from line */
-std::string line = "1 2 3";
+std::string line = "dog cat apple";
 std::string s;
 while(line >> s) do_something();
 ```
