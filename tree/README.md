@@ -3,9 +3,9 @@ Table of Contents
   * [Traversal](#Traversal)
 
 ## Traversal
-For example, a tree
-    2
-  /   \
+For example, a tree <br/>
+    2 <br/>
+  /   \ <br/>
  1     3
 #### Preorder-Traversal (VLR)
 preorder result: 213
