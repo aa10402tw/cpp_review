@@ -15,7 +15,7 @@ ptr = &x; // The unary address-of operator ( & ) takes the address of its operan
 ```
 
 #### Dereference operator (\*)
-pointer: a variable which stores the address of another variable.
+pointer: a variable which stores the address of another variable. <br/>
 dereference:  get the value a pointer point to 
 ```
 int x = 5;
