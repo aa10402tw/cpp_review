@@ -31,7 +31,7 @@ There are four major prinicple of OOP, which are [Abstraction 抽象化](#Abstra
 多型（Polymorphism）指為不同資料類型的實體提供統一的介面。 <br/>
 
 #### 例子
-C++ 的 STL(Standard Template Library): vector<int> queue<int> Container 提供不同種的資料型別使用同一介面。 <br/>
+C++ 的 STL(Standard Template Library)，如 vector<int>, queue<int>。這些 Container 提供不同種的資料型別使用同一介面。 <br/>
 運算子多載（Operator Overloading）讓同一符號（如+) 可以對不同資料型別運作。<br/>
 Method Overriding, modifying/replacing the behavior the superclass provides。<br/>
 函式多載（Function Overloading） 讓同一函式可以接受不同資料型別, 不同數量的參數 (有些覺得這不算多型）。<br/>
