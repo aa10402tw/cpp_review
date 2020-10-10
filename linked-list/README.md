@@ -4,13 +4,13 @@ Table of Contents
   * [Traversal](#Traversal)
 
 ## Basic-Struct
-'''
+```
 struct ListNode {
 	int val;        // value of this node
 	ListNode* next; // point to the next node
 	ListNode(int x) : val(x), next(NULL) {}
 };
-'''
+```
 
 ## Traversal
 ```
@@ -23,3 +23,4 @@ std::vector<int> ListToVec(ListNode* head) {
 	}
 	return vec;
 }
+```
