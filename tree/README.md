@@ -1,6 +1,17 @@
 Table of Contents
 =================
+  * [Basic-Struct](#Basic-Struct)
   * [Traversal](#Traversal)
+
+## Basic-Struct
+'''
+struct TreeNode {
+    int val;         // the value of this tree node
+    TreeNode* left;  // point to the root of left subtree
+    TreeNode* right; // point to the root of right subtree
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+'''
 
 ## Traversal
 For example, a tree <br/>
