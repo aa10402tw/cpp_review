@@ -31,7 +31,7 @@ struct NodeCmp {
 		return a->val > b->val;
 	}
 }; 
-//std::priority_queue<T, std::vector<T>, cmp> pq; <br/>
+//std::priority_queue<T, std::vector<T>, cmp> pq;
 std::priority_queue<ListNode*, std::vector<ListNode*>, NodeCmp> Q; // Top is smallest
 for (ListNode* node : lists)
 	if (node != nullptr) Q.push(node);
