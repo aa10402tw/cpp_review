@@ -1,7 +1,21 @@
 Table of Contents
 =================
+  * [Init Vector](#Init-Vector)
   * [Copy vector](#Copy-Vector)
   * [Sort vector](#Sort-Vector)
+  * [Remove-Element](#Remove-Element)
+
+## Init-Vector
+```
+// Create an empty vector 
+vector<int> vect;
+
+// Create a vector with some values
+vector<int> number = {10, 20, 30};
+
+// Create a vector of size n with all values as 10. 
+vector<int> vect(n, 10);
+```
 
 ## Copy-Vector
 ```
@@ -23,4 +37,10 @@ bool compareInterval(std::vector<int> i1, std::vector<int> i2) {
 	return (i1[0] < i2[0]);
 }
 std::sort(intervals.begin(), intervals.end(), compareInterval);
+```
+
+## Remove-Element
+```
+// erase the 6th element
+myvector.erase (myvector.begin()+5);
 ```
