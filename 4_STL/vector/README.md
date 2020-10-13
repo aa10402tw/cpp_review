@@ -19,9 +19,14 @@ vector<int> vect(n, 10);
 
 ## Copy-Vector
 ```
-std::vector<int> vec = {1,2,3};
-std::vector<int> vec2;
-vec2.assign(vec.begin(), vec.end());
+// constructor method (Deep copy) 
+vector<int> vect2(vect1); 
+
+// Copying vector by assign function  (Deep copy) 
+vec2.assign(vec1.begin(), vec1.end());
+
+// Using assignment operator to copy one vector to other (Deep copy) 
+vect2 = vect1;
 ```
 
 ## Sort-Vector

@@ -4,6 +4,7 @@ Table of Contents
   * [Char to String](#Char-to-String)
   * [Int and String](#Int-and-String)
   * [Parse Line](#Parse-Line)
+  * [Substring](#Substring)
 
 ## Copy-String
 Don't use strcpy (only use it for C-Style strings)
@@ -53,4 +54,15 @@ while(iss >> num) nums.push_back(num);
 std::string line = "dog cat apple";
 std::string s;
 while(line >> s) do_something();
+```
+
+## Substring
+```
+std::string s = "0123456789";
+
+// str.substr(startPos)
+s1 = s.substr(5) // s1 = "56789"
+
+// str.substr(startPos, length)
+s2 = s.substr(2, 3) // s1 = "234"
 ```
