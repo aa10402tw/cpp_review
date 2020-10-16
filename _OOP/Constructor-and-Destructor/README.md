@@ -36,10 +36,9 @@ private:
     double sales[12]; // 12 monthly sales
 }
 
-/*Only the simplest and most stable member functions (i.e., whose implementations are unlikely to change) should be defined in the class header. */
+/* Only the simplest and most stable member functions (i.e., whose implementations are unlikely to change) should be defined in the class header. */
 
 /* Member functions defined outside class using scope resolution operator (::) */
-
 SalesPerson::SalesPerson() {
     for (int i=0; i<12; i++)
         sales[i] = 0.0;
