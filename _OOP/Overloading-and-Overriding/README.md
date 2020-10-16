@@ -1,6 +1,6 @@
 ## 定義
-- Overloading (多載): 相同的模樣，擁有不同的行為 
-- Overriding (覆寫): 
+- Overloading (多載): 相同的模樣(簽名/運算子)，但擁有不同的行為 
+- Overriding (覆寫): 子類別將父類別函式重新定義以符合自身所需
 
 ## Overloading
 - Function Overloading
