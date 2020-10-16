@@ -2,12 +2,14 @@
 Constructor (建構子) 與 destructor (除構子): special member function in class, Compiler 會對它們作特殊的處理
 
 ## Constructor
-- Special member function (Initialize data members)
+- Special member function 
+    - Initialize data members
+    - Called when object instantiated
 - Same name as class
-- Called when object instantiated
 - Several constructors (Function overloading)
     - Default constructors
-    Defaults all arguments or Explicitly requires no arguments
+        - Defaults all arguments
+        - Explicitly requires no arguments
     - 如果程式設計師宣告了任何一個 constructor (不論是有參數的版本或沒有參數的版本), 則內建的 (沒有參數的) constructor 自動消失
 - No return type
 
@@ -20,8 +22,8 @@ Constructor (建構子) 與 destructor (除構子): special member function in c
 - No return type
 
 ## Common Error
-Attempting to initialize a non-static data member of a class explicitly in the class definition is a syntax error. <br/>
-A constructor can call other member functions of the class, such as set or get functions, but because the constructor is initializing the object, the data members may not yet be in a consistent state. Using data members before they have been properly initialized can cause logic errors.
+- Attempting to initialize a non-static data member of a class explicitly in the class definition is a syntax error. <br/>
+- A constructor can call other member functions of the class, such as set or get functions, but because the constructor is initializing the object, the data members may not yet be in a consistent state. Using data members before they have been properly initialized can cause logic errors.
 
 ## 如何呼叫 constructor
 宣告變數時, 例: Complex x(3,-4), y(2,-1); 注意: local static 變數的 constructor 在該副程式第一次執行時起動. <br/>
