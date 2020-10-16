@@ -18,8 +18,33 @@ Constructor (建構子) 與 destructor (除構子): special member function in c
     - Performs "termination housekeeping", before system reclaims object’s memory
 - Same name as class, Preceded with tilde (~)
 - No arguments, Cannot be overloaded
-    - No explicit destructor, Compiler creates "empty" destructor”
+    - if no explicit destructor, Compiler creates "empty" destructor”
 - No return type
+
+## Example 
+```
+class SalesPerson 
+{
+public:
+    SalesPerson(); // default constructor
+    SalesPerson(int[]); // constructor overloading
+    void setSales(int, double); // set 
+    void printAnnualSales(); 
+    ~SalesPerson(); // destructor
+private:
+    double totalAnnualSales(); // prototype for utility function
+    double sales[12]; // 12 monthly sales
+}
+
+/*Only the simplest and most stable member functions (i.e., whose implementations are unlikely to change) should be defined in the class header. */
+
+/* Member functions defined outside class using scope resolution operator (::) */
+
+SalesPerson::SalesPerson() {
+    for (int i=0; i<12; i++)
+        sales[i] = 0.0;
+}
+```
 
 ## Common Error
 - Attempting to initialize a non-static data member of a class explicitly in the class definition is a syntax error. <br/>
