@@ -1,35 +1,28 @@
 Table of Contents
 =================
-  * [Copy string](#Copy-String)
-  * [Char to String](#Char-to-String)
-  * [Int and String](#Int-and-String)
-  * [Parse Line](#Parse-Line)
-  * [Substring](#Substring)
+  * [Basic Operation](#Basic-Operation)
 
-## Copy-String
+## Basic-Operation
+#### Copy-String
 Don't use strcpy (only use it for C-Style strings)
 ```
 std::string a = "text";
 std::string b = a; // copy a into b
 ```
 
-## Char-to-String
-1. operator += 
+#### Char-to-String 
 ```
 char c = 'A';
-std::string s;
-s += c;
-```
-2. operator = 
-```
-char c = 'A';
-std::string s;
-s = c;
+// operator += 
+std::string s1;
+s1 += c;
+
+//operator = 
+std::string s2;
+s2 = c;
 ```
 
-## Int-and-String
-std::to_string() <br/>
-std::stoi()
+#### Type conversion (int <-> string)
 ```
 /* Int to String */
 int x = 10;
@@ -40,7 +33,7 @@ std::string s = "20";
 int x = std::stoi(s);
 ```
 
-## Parse-Line
+#### Parse-Line
 std::istringstream iss
 ```
 /* Get numbers from line */
@@ -56,7 +49,7 @@ std::string s;
 while(line >> s) do_something();
 ```
 
-## Substring
+#### Substring
 ```
 std::string s = "0123456789";
 
