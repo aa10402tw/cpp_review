@@ -28,8 +28,8 @@ Ans: Object oriented language such as C++/java/python uses **bottom up approach*
 Ans: Friend function<br/>
 
 **Which of the following is correct about the statements given below?** <br/>
-***All operators can be overloaded in C++.*** <br/>
-***We can change the basic meaning of an operator in C++.***
+*All operators can be overloaded in C++.* <br/>
+*We can change the basic meaning of an operator in C++.*<br/>
 Ans: Both I and II are false<br/>
 
 **Which one of the following is the correct way to declare a pure virtual function** <br/>
@@ -48,8 +48,8 @@ Ans: [] yes, -> yes, * yes, ?: No<br/>
 Ans: friend<br/>
 
 **Which one of the following is correct about the statements given below?**<br/>
-***All function calls are resolved at compile-time in Procedure Oriented Programming.***<br/>
-***All function calls are resolved at compile-time in OOPS.***<br/>
+*All function calls are resolved at compile-time in Procedure Oriented Programming.*<br/>
+*All function calls are resolved at compile-time in OOPS.*<br/>
 Ans: Only I is correct.<br/>
 
 **What will happen if a class is not having any name?**<br/>
