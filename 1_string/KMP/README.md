@@ -49,14 +49,10 @@ std::vector<int> KMP(std::string target, std::string pattern) {
     int m = target.size();
     int n = pattern.size();
     std::vector<int> failure = getFailureFunction(pattern);
-    for (int num : failure)
-        std::cout << num << " ";
-    std::cout << std::endl;
     std::vector<int> matchIdxs;
 
     int i = 0, j = 0;
     while (i < m && j < n) {
-        std::cout << i << "," << j << std::endl;
         if (target[i] == pattern[j]) {
             if (j == pattern.size()-1) {
                 matchIdxs.push_back(i - n + 1);
