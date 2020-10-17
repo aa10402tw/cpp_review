@@ -23,10 +23,10 @@ KMP主要利用「次長的相同前綴後綴」(Longest Proper prefix which is 
   - 例子 S = "abaabc"，P = "abaaba" 比到最後一個字元時不相符，但已知 F[4] = 2（代表 [ab]a[ab]），因此把 j 移動到已知最長前綴後綴的下一個(ab[a]ab) 與 c 做比較 
     - 比較最後一個位元一開始
       - [abaab"c"]
-      - [abaab"a"]
+      - [**ab**a**ab**"a"]
     - 下一步
       - [abaab"c"]
-      - [---ab"a"aba]
+      - [---**ab**"a"**ab**a]
 - 程式碼:
 ```
 std::vector<int> getFailureFunction(std::string pattern) {
