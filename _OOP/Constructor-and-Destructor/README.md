@@ -61,3 +61,17 @@ No, never do that!
 宣告方式: Complex(Complex const& x) <br/>
 使用方式: 例 Complex x(3,4); Complex y(x);
 注意: 在變數宣告中, complex y = x; 會呼叫到 copy constructor; 但是在程式中, y = x; 呼叫到的則是 assignment operator.
+
+## Initializer List
+- It is better to initialize all class variables in Initializer List instead of assigning values inside body (perfomance is better).
+- Initializer List must be used for
+    - const data members
+    - reference members
+    - member objects which do not have default constructor
+    - base class members
+- Example
+Point(int i = 0, int j = 0): x(i), y(j) {}  
+/*  
+Equal to 
+Point(int i = 0, int j = 0) { x = i; y = j; } 
+*/

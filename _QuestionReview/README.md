@@ -60,3 +60,9 @@ Ans: Making at least one member function as pure virtual function
 
 **Which one of the following options is correct**<br/>
 Ans: Friend function can access public/protected/private data members of the class
+
+**Which of the following cannot be declared as virtual?**<br/>
+Ans: Constructor and Data Members
+
+**Where the default value of parameter have to be specified?**<br/>
+Ans: Function prototype
