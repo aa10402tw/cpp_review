@@ -14,9 +14,11 @@ main() {
 ```
 **What is the output of the following program?** <br/>
 Ans: 65, as the union variables share common memory for all its elements, x gets ‘A’ whose ASCII value is 65 and is printed.<br/>
+\
 
 **Choose the respective delete operator usage for the expression ‘ptr=new int[100]’.** <br/>
 Ans: delete[] ptr;<br/>
+\
 
 **Runtime polymorphism is done using.** <br/>
 Ans: Virtual functions gives the ability to override the functionality of base class into the derived class. Hence achieving dynamic/runtime polymorphism.<br/>
