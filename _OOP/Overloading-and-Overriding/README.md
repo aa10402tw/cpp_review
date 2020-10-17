@@ -3,8 +3,8 @@
 - Overriding (覆寫): 子類別將父類別函式重新定義以符合自身所需
 
 ## Overloading
-- Function Overloading
-    - 靜態多型
+- Function Overloading 
+    - 靜態多型 (Static Polymorphism)
     - 同樣名稱的函數有多種格式，或說多個函數共用一個函數名稱
     - 可以定義兩個有相同名稱的函數，但函數簽名 (Signature) 必須不同 (引數串列的引數數目、引數型態)
     - Example
@@ -17,7 +17,7 @@ print(15, 5);
 ```
 
 - Operator Overloading 
-    - 靜態多型
+    - 靜態多型(Static Polymorphism)
     - 讓運算子(符號)有不同的意義
         - 例如重新定義 Custom Class 的比較運算子 <, =, > 
         - 例如重新定義 Custom Class 的算術運算子 +, -

@@ -13,13 +13,13 @@ main() {
 }
 ```
 **What is the output of the following program?** <br/>
-Ans: 65, as the union variables share common memory for all its elements, x gets ‘A’ whose ASCII value is 65 and is printed.
+Ans: 65, as the union variables share common memory for all its elements, x gets ‘A’ whose ASCII value is 65 and is printed.<br/>
 
 **Choose the respective delete operator usage for the expression ‘ptr=new int[100]’.** <br/>
-Ans: delete[] ptr;
+Ans: delete[] ptr;<br/>
 
 **Runtime polymorphism is done using.** <br/>
-Ans: Virtual functions gives the ability to override the functionality of base class into the derived class. Hence achieving dynamic/runtime polymorphism.
+Ans: Virtual functions gives the ability to override the functionality of base class into the derived class. Hence achieving dynamic/runtime polymorphism.<br/>
 
 **Which of the following approach is adapted by C++?** <br/>
 Ans: Object oriented language such as C++/java/python uses **bottom up approach** where each object is identified first.
@@ -66,3 +66,12 @@ Ans: Constructor and Data Members
 
 **Where the default value of parameter have to be specified?**<br/>
 Ans: Function prototype
+
+**Which of the following means "The use of an object of one class in definition of another class"?** <br/>
+Ans: Composition
+
+**Which of the following statement is correct with respect to the use of friend keyword inside a class?** <br/>
+Ans: A class may be declared as a friend.
+
+**Which of the following statement is correct regarding destructor of base class?** <br/>
+Ans: Destructor of base class should always be virtual.
