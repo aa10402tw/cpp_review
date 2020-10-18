@@ -1,3 +1,10 @@
+/* [Question Description]
+Invert a binary tree.
+Input:
+Output:
+Trivia:
+This problem was inspired by this original tweet by Max Howell:
+*/ 
 #include <iostream>
 struct TreeNode {
 	int val;

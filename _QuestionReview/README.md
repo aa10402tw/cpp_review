@@ -1,20 +1,3 @@
-
-```
-#include<iostream>
-using namespace std;
-main() {	
-   union abc {
-		int x;
-		char ch;
-	} var;
-	
-   var.ch = 'A';
-   cout<<var.x;
-}
-```
-**What is the output of the following program?** <br/>
-Ans: 65, as the union variables share common memory for all its elements, x gets ‘A’ whose ASCII value is 65 and is printed.<br/>
-
 **Choose the respective delete operator usage for the expression ‘ptr=new int[100]’.** <br/>
 Ans: delete[] ptr;<br/>
 
@@ -28,8 +11,8 @@ Ans: Object oriented language such as C++/java/python uses **bottom up approach*
 Ans: Friend function<br/>
 
 **Which of the following is correct about the statements given below?** <br/>
-- *All operators can be overloaded in C++.* <br/>
-- *We can change the basic meaning of an operator in C++.*<br/>
+*All operators can be overloaded in C++.* <br/>
+*We can change the basic meaning of an operator in C++.*<br/>
 Ans: Both I and II are false<br/>
 
 **Which one of the following is the correct way to declare a pure virtual function** <br/>
@@ -48,8 +31,8 @@ Ans: [] yes, -> yes, * yes, ?: No<br/>
 Ans: friend<br/>
 
 **Which one of the following is correct about the statements given below?**<br/>
-- *All function calls are resolved at compile-time in Procedure Oriented Programming.*<br/>
-- *All function calls are resolved at compile-time in OOPS.*<br/>
+*All function calls are resolved at compile-time in Procedure Oriented Programming.*<br/>
+*All function calls are resolved at compile-time in OOPS.*<br/>
 Ans: Only I is correct.<br/>
 
 **What will happen if a class is not having any name?**<br/>
@@ -75,3 +58,27 @@ Ans: A class may be declared as a friend.<br/>
 
 **Which of the following statement is correct regarding destructor of base class?** <br/>
 Ans: Destructor of base class should always be virtual.<br/>
+
+```
+#include<iostream>
+using namespace std;
+main() {	
+   union abc {
+		int x;
+		char ch;
+	} var;
+	
+   var.ch = 'A';
+   cout<<var.x;
+}
+```
+**What is the output of the following program?** <br/>
+Ans: 65, as the union variables share common memory for all its elements, x gets ‘A’ whose ASCII value is 65 and is printed.<br/>
+
+**Which of the following statement is correct?**
+Which of the following statement is correct? <br/>
+
+**Which of the following statements is correct?**
+*We can return a global variable by reference.*
+*We cannot return a local variable by reference.*
+Only 2 is correct
