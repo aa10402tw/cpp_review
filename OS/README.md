@@ -1,31 +1,25 @@
-**什麼是OS?** <br/>
+## 專有名詞
+### OS (Operating System)
 Ans: 確保 Process 可以正確執行，不會讓 Process 跟 Process 之間互相干擾，
 並透過 kernel mode 跟 user mode 保護硬體，
 並提供 high level 的 system call 讓使用者不能直接操作硬體，
 簡化操作，也更加有效率等。
 
-**CPU怎麼處理interrupt ? 處理的時候會做什麼?**
-● Interrupt 的種類
-  I. External Interrupt（外部中斷）: CPU 外的週邊元件所引起的。
-    （I/O Complete Interrupt, I/O Device error）
-  II. Internal Interrupt（內部中斷）:不合法的用法所引起的。
-    （Debug、Divide-by-zero、overflow）
-  III. Software Interrupt（軟體中斷）：使用者程式在執行時，若需要OS 提供服
-      務時，會藉由System Call 來呼叫OS 執行對應的service routine，完成服務請求
-      後，再將結果傳回給使用者程式。
-● Interrupt 的處理流程
-Setps
-  1. 暫停目前process 之執行。
-  2. 保存此process 當時執行狀況。
-  3. OS 會根據Interrupt ID 查尋Interrupt vector。
-  4. 取得ISR（Interrupt Service Routine）的起始位址。
-  5. ISR 執行。
-  6. ISR 執行完成，回到原先中斷前的執行。
+### Interrupt
+- Interrupt 的種類
+    - External Interrupt（外部中斷）: CPU 外的週邊元件所引起的。 （I/O Complete Interrupt, I/O Device error）
+    - Internal Interrupt（內部中斷）:不合法的用法所引起的。（Debug、Divide-by-zero、overflow）
+    - Software Interrupt（軟體中斷）：使用者程式在執行時，若需要OS 提供服務時，
+    會藉由System Call 來呼叫OS 執行對應的service routine，完成服務請求後，再將結果傳回給使用者程式。
+- Interrupt 的處理流程
+  1. 暫停目前process 之執行。 <br/>
+  2. 保存此process 當時執行狀況。 <br/>
+  3. OS 會根據Interrupt ID 查尋Interrupt vector。 <br/>
+  4. 取得ISR（Interrupt Service Routine）的起始位址。 <br/>
+  5. ISR 執行。<br/>
+  6. ISR 執行完成，回到原先中斷前的執行。<br/>
  
-Interrupt I/O（中斷式I/O）
-  其運作處理方式如下
-
-Steps
+- Interrupt I/O（中斷式I/O）其運作處理方式如下
   1. 發出I/O 要求給CPU（OS）。
   2. CPU 設定I/O commands 給I/O Device controller。
   3. I/O Device 運作執行。
@@ -44,7 +38,7 @@ ISR:
 ISR簡單來說就是中斷會跳去執行的函式,而他跟task或process不同的地方是,
 做context switch的時候ISR只會PUSH部份暫存器,而task或process會push所有的暫存器
 
-**System Call**
+## System Call
 System call 是 process 與作業系統之間的介面。
 System call 是由 Linux kernel 所實作並提供給使用者，
 user-space program 可透過 system call 與Linux kernel 溝通
@@ -60,7 +54,7 @@ Device Management
 Information Maintenance
 Communication
 
-行程控制(Process Control)系統呼叫
+### 行程控制(Process Control)系統呼叫
 如前述，CPU 抓取主記憶體(Main Memory)的程式(Program)並執行其工作(Job)如此是謂“行程(Process)”。
 執行過程中，凡遇行程衝撞系統的動作，均須作系統呼叫，
 由具有安全性的即定程序引導執行。行程作系統呼叫的項目有：
@@ -94,20 +88,20 @@ Communication
 為了安全，均須呼叫作業系統導引執行。
 3. 檔案屬性 (File Attributes)：為了配合存取檔案的需要，往往需要了解其他檔案的屬性，此時呼叫作業系統讀取其他檔案的屬性(Get File Attributes)；亦或呼叫作業系統設定本身檔案的屬性(Set File Attributes)，以供其他檔案讀取使用
 
-資料維護(Information Maintenance)系統呼叫
+### 資料維護(Information Maintenance)系統呼叫
 隨著時間的改變，將資料更新是謂“資料維護(Information Maintenance)”，如果是系統資料的更新，為了安全，須作系統呼叫執行：
 1. 設定時間或日期(Set Time or Date)：電腦內部有計時裝置，配合計時器的運轉，作業系統對映顯示時間及日期，因是作業系統的管轄部份，如果更新顯示時間或日期，需呼叫作業系統導引執行。
 2. 存取系統資料 (Get / Set System Data)：作業系統的資料牽涉電腦的整體運作，故其任何更新之改變需呼叫作業系統導引執行。
 3. 存取行程、檔案、或裝置之屬性 (Get / Set Process、File、or Device Attributes)：如前述，行程、檔案、或裝置資料之存取，需呼叫作業系統導引執行，其屬性亦應呼叫作業系統導引執行。
 
-連線通訊(Communication)系統呼叫
+### 連線通訊(Communication)系統呼叫
 分散式系統是將散置各處的電腦以連線連通，執行訊息傳遞等 I/O 存取行為，故須作系統呼叫執行：
 1. 建立或中斷連通連線 (Create / Delete Communication Connection)：實體連線的連接屬於網路實體層，如要改變現狀，需呼叫作業系統導引執行。
 2. 輸入輸出網路資料 (Send / Receive Messages)：網路資料的輸入輸出牽涉甚多，除了 I/O 機制外，還有網路機制等問題，絕非程式本身可單獨執行者，為了安全，為了克服重重機制，需呼叫作業系統導引執行。
 3. 狀態資訊之轉換 (Transfer Status Information)：為了配合不同的環境條件，系統須對某些區塊設定狀態旗標 (Status Flag)，媒合執行行程，如要轉換這些狀態資訊，需呼叫作業系統導引執行。
 4. 使用遠端裝置 (Attach / Detach Remote Devices)：當使用網路遠端其他電腦或裝置時，系統應有相對之使用訊息，以供資源分配的依據，如果使用情況改變，需呼叫作業系統導引執行改變對應之使用訊息。
 
-**OSI模型**
+### OSI模型
 第7層應用層（Application Layer）
 	提供為應用軟體而設的介面，以設定與另一應用軟體之間的通訊。例如：HTTP，HTTPS，FTP，TELNET，SSH，SMTP，POP3等。
 第6層表達層（Presentation Layer）
@@ -124,14 +118,14 @@ Communication
 第1層實體層（Physical Layer）
 	在局部區域網路上傳送影格，它負責管理電腦通訊裝置和網路媒體之間的互通。包括了針腳、電壓、線纜規範、集線器、中繼器、網卡、主機介面卡等
 
-**Real-time operating system, RTOS**
+## Real-time operating system, RTOS
 實時作業系統與一般的作業系統相比，最大的特色就是其「實時性」，
 也就是說，如果有一個任務需要執行，
 實時作業系統會馬上（在較短時間內）執行該任務，
 不會有較長的延時。這種特性保證了各個任務的及時執行
 設計實時作業系統的首要目標不是高的吞吐量，而是保證任務在特定時間內完成
 
-**3 / 4 way handshake**
+## 3 / 4 way handshake
 ```
 [SYN]              我: 哈嚕, 有沒有聽到聲音?
 [SYN, ACK]      A: 有聽到，那我呢?有沒有聽到聲音
@@ -147,7 +141,7 @@ Communication
 4. (B) -->    ACK     --> (A)
 ```
 
-**stack/heap overflow**
+## stack/heap overflow
 stack：區域變數
 堆疊區段（stack segment）用於儲存函數的區域變數，以及各種函數呼叫時需要儲存的資訊（例如函數返回的記憶體位址還有呼叫者函數的狀態等），每一次的函數呼叫就會在堆疊區段建立一個 stack frame，儲存該次呼叫的所有變數與狀態，這樣一來同一個函數重複被呼叫時就會有不同的 stack frame，不會互相干擾，遞迴函數就是透過這樣的機制來執行的。
 區域變數(local variable)、函式參數(function/method parameter)、函數的返回位址(function/method return address)
@@ -163,7 +157,7 @@ heap 區段的記憶體空間用於儲存動態配置的變數，例如 C 語言
 
 Heap中的資料如果沒有正常的回收，將會逐步成長到將記憶體消耗殆盡
 
-**Memory Hierarchy**
+## Memory Hierarchy
 Register – Cache – Main Memory – Disk –Tape
 愈快 ← 速度 → 愈慢
 愈昂貴 ← 價格 → 愈便宜
@@ -173,7 +167,7 @@ SRAM (Static RAM)：用Flip/Flop儲存，速度快，密度低(元件大)，成�
 DRAM (Dynamic RAM)：用電容器製作，速度慢，密度高(元件小)，成本低，為Main Memory的主體，須Refresh
 儲存的電荷會隨著時間漸漸消失，因此需要有個再充電（Refresh）的動作保持電容儲存的資料
 
-**User space/ Kernel space**
+## User space/ Kernel space
 簡單說，Kernel space 是 Linux 內核的運行空間，User space 是用戶程序的運行空間。
 為了安全，它們是隔離的，即使User的程序崩潰了，內核也不受影響。
 Kernel space 可以執行任意命令，調用系統的一切資源；
@@ -186,7 +180,7 @@ file.write(str) // 切換到內核空間
 y = x + 4 // 切換回用戶空間
 ```
 
-**DMA是什麼，好處是？請簡單在白板上畫出他的架構圖。**
+## DMA是什麼，好處是？請簡單在白板上畫出他的架構圖。**
 直接記憶體存取（Direct Memory Access，DMA）
 是電腦科學中的一種記憶體存取技術。
 它允許某些電腦內部的硬體子系統（電腦外設），
@@ -200,6 +194,6 @@ DMA是所有現代電腦的重要特色，它允許不同速度的硬體裝置�
 然後把它們再次寫回到新的地方。
 在這個時間中，中央處理器對於其他的工作來說就無法使用。
 
-**Synchronous call 跟 Asynchronous call**
+## Synchronous call 跟 Asynchronous call
 Async是接收到需求，不用一直等到需求完成再執行其他需求(0)
 Async與Sync的差別在於：發送需求的人是否需要等到需求完成才可以執行其他事情。
