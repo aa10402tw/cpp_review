@@ -1,0 +1,81 @@
+### Common ###
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+You can run multiple commands in one single command by using the “;” to separate them. 
+For example Command1; Command2; Command3. 
+Or use && if you only want the next command to run when the first one is successful.
+	
+
+  |: pipe (將兩個獨立的程式給串接起來，把前面程式的輸出當作下一個程式的輸入)
+
+  	# use file globs
+  	ls ./A/*.cpp
+  	ls ./A/*.{c, cpp}
+
+  	# use pipe
+  	ls -a /usr | grep '^[prs]'
+  	ls -l | grep -E "\.(c|cpp)$"
+
+  grep: Global Regular Expression Print
+  	(使用關鍵字或正規表示法（regular expression）篩選出想要尋找的資料，並且顯示出來)
+	grep 關鍵字 檔案1 檔案2 ...
+	# 在 /etc/os-release 檔案中搜尋 Ubuntu 關鍵字
+	grep Ubuntu /etc/os-release
+  
+  
+	cat > filename creates a new file
+	cat f1 f2 > f3 joins two files (1 and 2) and stores the output of them in a new file (3)
+
+  
+  (出目前目錄中的檔案與目錄列表)
+	-l 參數可以顯示檔案與目錄的詳細資訊
+	-a 參數可以顯示隱藏的檔案與目錄
+	-R 參數可以靠遞迴的方式列出所有子目錄的檔案
+	-S 可以讓檔案依照檔案的大小來排序
+	-d 參數可以讓 ls 只列出目錄
+	--color 參數可以調整檔案輸出時是否要加上顏色(always, never, auto)
+
+  $NAME: In most shells – sh, bash, csh..., – the $NAME syntax denotes variables 
+  (similar to %NAME% in Windows cmd.exe); usually environment variables, but several of them are internal to the shell.
+ 
+
+### Module ###
+  
+
+
+

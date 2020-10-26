@@ -1,0 +1,59 @@
+## Commom Command
+```
+mkdir: Make Directory
+cd: Change Directory
+
+pwd: Print Working Directory
+ls: List
+grep: Global Regular Expression Print
+
+cp: copy file
+rm: remove file
+touch: The touch command allows you to create a blank new file through the Linux command line
+echo: This command is used to move some data into a file (e.g., echo Hello, my name is John >> name.txt)
+cat: Concatenate
+	- cat > filename creates a new file
+	- cat f1 f2 > f3 joins two files (1 and 2) and stores the output of them in a new file (3)
+head: The head command is used to view the first lines of any text file
+tail: The tail command will display the last ten lines of a text file
+
+find: searches for files and directories
+chown: change or transfer the ownership of a file to the specified username (e.g., chown linuxuser2 file.ext)
+	
+chmod: Change Mod (read, write, and execute permissions of files and directories)
+uname: print detailed information about your Linux system
+
+hostname: the name of your host/network
+ping: check your connectivity status to a server(e.g. ping google.com)
+wget: download files from the internet
+
+kill: terminate program (kill [signal option] PID.)
+top: display a list of running processes and how much CPU each process uses
+history: review the commands you’ve entered before
+
+zip/unzip: compress your files into a zip archive, extract the zipped files from a zip archive
+```
+
+## Advance usage 
+ls: List (列出目前目錄中的檔案與目錄列表)
+```
+-l 參數可以顯示檔案與目錄的詳細資訊
+-a 參數可以顯示隱藏的檔案與目錄
+-R 參數可以靠遞迴的方式列出所有子目錄的檔案
+-S 可以讓檔案依照檔案的大小來排序
+-d 參數可以讓 ls 只列出目錄
+--color 參數可以調整檔案輸出時是否要加上顏色(always, never, auto)
+```
+
+grep: (使用關鍵字或正規表示法（regular expression）篩選出想要尋找的資料，並且顯示出來)
+```
+grep 關鍵字 檔案1 檔案2 ...
+在 /etc/os-release 檔案中搜尋 Ubuntu 關鍵字
+grep Ubuntu /etc/os-release
+```
+## Module
+```
+insmod : insert module
+lsmod  : list modules
+rmmod  : remove module
+```

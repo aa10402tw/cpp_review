@@ -1,0 +1,28 @@
+ regular expression:
+	Character: a, b, c
+	Quantifier: a+(>=1), a*(>=0), a?(<=1 and >=0)
+	\w: Word, \W: Not Word, \d: Digit, \D: Not Digit, \s: Whitespace, \S: Not Whitespace
+	Character Set: [abc], [a-z], [a-zA-Z0-9]
+	|: Alternation (like boolean OR)
+	(): Capturing group 
+	(?:pattern): group multiple tokens together
+	^: Begining of string (or begining of a line if multiline is enabled)
+	#: End of the string
+
+	e   : match (e) just like ctrl+F
+	e+  : match (e) in a row as much as possible >= 1 (e.g., e, ee eee)
+	e*  : match (e) in a row as much as possible >= 0 (e.g., "" , e, ee eee)
+	e+a : match (e) in a row as much as possible, followed by (a) (e.g., ea eea eeea) 
+	e+a?: match (e) in a row as much as possible, followed by (a), and (a) is optional (e.g., e ea ee eea eeea) 
+	(e:Character, +:Quantifier, match 0 or more, a:character, ?:Quantifier, match between 0 and 1)
+	e.  : match  (e) and any character (.) except line break (use \. to match character .)
+
+	\w match any word character (a,b,c), \W match any non-word character ("" "\t")
+	\s match whitespace, \S match not whitespace
+	\w{wordLen} match any word length L \w{min, max} match any word length between min and max
+	[ak] match character in the character set (in this case, a and k)
+
+	phone number format
+		1234567890: \d{10}
+		123-456-7890:  \d{3}-\d{3}-\d{4}
+		both : \d{3}-?\d{3}-?\d{4}
