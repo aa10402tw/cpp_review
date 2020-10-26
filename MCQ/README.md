@@ -75,10 +75,7 @@ main() {
 **What is the output of the following program?** <br/>
 Ans: 65, as the union variables share common memory for all its elements, x gets ‘A’ whose ASCII value is 65 and is printed.<br/>
 
-**Which of the following statement is correct?**
-Which of the following statement is correct? <br/>
-
-**Which of the following statements is correct?**
+**Which of the following statements is correct?** <br/>
 *We can return a global variable by reference.*
 *We cannot return a local variable by reference.*
 Only 2 is correct
