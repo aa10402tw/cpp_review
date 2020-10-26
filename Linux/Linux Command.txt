@@ -41,15 +41,7 @@ For example Command1; Command2; Command3.
 Or use && if you only want the next command to run when the first one is successful.
 	
 
-  |: pipe (將兩個獨立的程式給串接起來，把前面程式的輸出當作下一個程式的輸入)
-
-  	# use file globs
-  	ls ./A/*.cpp
-  	ls ./A/*.{c, cpp}
-
-  	# use pipe
-  	ls -a /usr | grep '^[prs]'
-  	ls -l | grep -E "\.(c|cpp)$"
+  
 
   grep: Global Regular Expression Print
   	(使用關鍵字或正規表示法（regular expression）篩選出想要尋找的資料，並且顯示出來)

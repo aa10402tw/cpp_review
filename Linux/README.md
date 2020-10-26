@@ -33,7 +33,8 @@ chmod: Change Mod (read, write, and execute permissions of files and directories
 uname: print detailed information about your Linux system
 
 hostname: the name of your host/network
-ping: check your connectivity status to a server(e.g. ping google.com)
+ping: check your connectivity status to a server
+	- ping google.com
 wget: download files from the internet
 
 kill: terminate program (kill [signal option] PID.)
@@ -59,7 +60,20 @@ grep: (使用關鍵字或正規表示法（regular expression）篩選出想要�
 grep 關鍵字 檔案1 檔案2 ...
 在 /etc/os-release 檔案中搜尋 Ubuntu 關鍵字
 grep Ubuntu /etc/os-release
+在 /etc/os-release 檔案中搜尋 Ubuntu 關鍵字
 ```
+
+|: pipe (將兩個獨立的程式給串接起來，把前面程式的輸出當作下一個程式的輸入)
+```
+# use file globs
+ls ./A/*.cpp
+ls ./A/*.{c, cpp}
+
+# use pipe
+ls -a /usr | grep '^[prs]'
+ls -l | grep -E "\.(c|cpp)$"
+```
+
 ## Module
 ```
 insmod : insert module
