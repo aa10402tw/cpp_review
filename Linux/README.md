@@ -7,15 +7,24 @@ pwd: Print Working Directory
 ls: List
 grep: Global Regular Expression Print
 
-cp: copy file
-rm: remove file
+
 touch: The touch command allows you to create a blank new file through the Linux command line
-echo: This command is used to move some data into a file (e.g., echo Hello, my name is John >> name.txt)
+	- touch filename
+cp: copy file 
+	- cp src_path dst_path
+rm: remove file (-r 遞迴刪除, -f 強制刪除)
+	- rm filename
+	- rm -r dirname/ (遞迴刪除, 會把目錄內所有檔案及目錄) 
+echo: This command is used to move some data into a file 
+	- echo "Hello, my name is John" >> name.txt
 cat: Concatenate
-	- cat > filename creates a new file
+	- cat filename (view contain of file)
+	- cat > filename (creates a new file)
 	- cat f1 f2 > f3 joins two files (1 and 2) and stores the output of them in a new file (3)
 head: The head command is used to view the first lines of any text file
+	- head filename
 tail: The tail command will display the last ten lines of a text file
+	- tail filename
 
 find: searches for files and directories
 chown: change or transfer the ownership of a file to the specified username (e.g., chown linuxuser2 file.ext)
