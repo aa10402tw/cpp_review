@@ -43,50 +43,53 @@ int const * const foo; // 一個 const pointer，指向 const int 變數。
 關鍵字 volatile 等等判讀方式相同。
 
 
-## 指標練習題
+## 指標與 increment operator (++)
+**Post Increment** (p++): First the value is assigned, then it get incremented  <br/>
+**Pre Increment**  (++p): First the value is get increment, then the assignment will be done
+
+```
+int a[5] = {1,2,3,4,5};
+int *p1, *p2;
+
+/*Post Increment*/
+p1 = &a[0];
+p2 = p1++;
+printf("%d\n", *p2);  // 1
+printf("%d\n", *p1);  // 2
+
+/*Pre Increment*/
+p1 = &a[0];
+p2 = ++p1;
+printf("%d\n", *p2);  // 2
+printf("%d\n", *p1);  // 2
+```
+
+## 指標練習
 ```
 int a[] = {1, 2, 3, 4, 5, 6};
-int *p = a;
-*(p++) += 100;
-*(++p) += 100;
+int *p = a;    // let i be the index that p is point at (now i=0)
+*(p++) += 100; // first A[i] += 100 (i=0), then i += 1 (i=1)
+*(++p) += 100; // first i += 1 (i=2), then A[i] += 100 (i=2)
 
 for(int i=0; i<6; i++){
    printf("%d ", a[i]);
 }
-    
-// 101 2 103 4 5 6
-++ 在後 優先權最低  先取值 +=100 再 指標後移。
-++ 在前 優先權最高  先指標後移 再取值 +=100。
+// Ans: 101 2 103 4 5 6
 ```
 
 ```
 char s[] = "0113256";
-char* p = s;
-printf("%c", *p++);     // 0  *p++ = *(p++) 先取值, 後指標下移 
-printf("%c", *(p++));   // 1  
-printf("%c", (*p)++);   // 1  (*p)++ 先取值	後值+1
-printf("%c", *++p);     // 3  *++p = *(++p) 先指標下移 後取值
-printf("%c", *(++p));   // 2
-printf("%c", ++*p);     // 3  ++*p = ++(*p) 先值+1 後取值
-printf("%c", ++(*p));   // 4
+char* p = s; // let i be the index that p is point at (i=0)
+printf("%c", *p++);     // 0  *p++ = *(p++) 先取指標 (i=0) 及值 A[i], 指標再加1 (i=1)
+printf("%c", *(p++));   // 1  先取指標 (i=0) 及值 A[i], 指標再加1 (i=1)
+printf("%c", (*p)++);   // 1  先取值 A[i] (i=1) 回傳, 後值+1 (A[i]+=1) 
+printf("%c", *++p);     // 3  *++p = *(++p) 先指標+1 (i=2), 後取值 A[i]
+printf("%c", *(++p));   // 2  先指標+1 (i=3), 後取值 A[i] 
+printf("%c", ++*p);     // 3  ++*p = ++(*p) 先對 A[i]+1, 再回傳 A[i] (i=3)
+printf("%c", ++(*p));   // 4  先對 A[i]+1, 再回傳 A[i] (i=3)
 printf(s);              // 0123456
-
-第一行字串為 : 0113234
-第二行字串為 : 0123456
-*p = 取值
-p = 取指標位址
-& :取變數在記憶體裡面的位置
-* :取變數在記憶體裡面的值
-++在前  =  先加1再取值
-++在後  =  先取值後加1
-```
-
-```
-int a[5] ={1,2,3,4,5};
-int *p = (int *)(&a+1);
-
-the value of *(a+1), (*p-1)?
-Ans: 2, 6946571
+//第一行字串為 : 0113234
+//第二行字串為 : 0123456
 ```
 
 ## 函式指標範例
@@ -133,4 +136,6 @@ int call_a_func(MathFunc call_this) {
  
 int final_result = call_a_func(do_math);
 ```
+
+## 指標選擇題
 
