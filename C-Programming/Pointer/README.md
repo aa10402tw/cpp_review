@@ -1,7 +1,23 @@
 ## Pointer
 
 ### Basic
-指標 (pointer)：一個指向某個儲存位址的變數，語法為 <br/>
+指標 (pointer)：一個指向某個儲存位址的變數，語法為
+```
+int *ptr = &var;
+```
+- & 取變數位址
+- * 表示為指標變數。 <br/>
+<br/>
+函式指標 (function pointer)，語法為
+```
+void (*fptr)(type_a, type_b) = &func;
+```
+常用的地方如下
+- 函式 sort 時傳入判斷準則
+- multithread 傳函數進入建立 thread 的 API 中
+- callback function (一種事件導向的函式)
+
+
 ```
 int a[] = {1, 2, 3, 4, 5, 6};
 int *p = a;
