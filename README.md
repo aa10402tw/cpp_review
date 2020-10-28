@@ -4,3 +4,4 @@ useful link: <br/>
 [Learn C++](https://www.tutorialspoint.com/cplusplus/index.htm) <br/>
 [C++ Test](https://www.fresherslive.com/online-test/cpp-programming-test/questions-and-answers) <br/>
 [台大 C++ PPT](https://www.csie.ntu.edu.tw/~r95116/CA200/slide/)
+[C MCQ](https://www.sanfoundry.com/c-interview-questions-answers/)

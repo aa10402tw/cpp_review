@@ -101,7 +101,7 @@ ifndef/define/endif」主要目的是防止頭文件的重複包含和編譯，�
 ```
 
 ## struct, union and enum
-struct
+### struct
 ```
 struct Employee{
 	char name[30]; // 名字
@@ -112,7 +112,7 @@ struct Employee{
 struct Employee employee; // 宣告變數employee，記得前面要加struct
 ```
 
-union
+### union
 ```
 union Var{ 
 	char ch;
@@ -131,7 +131,7 @@ int main(void) {
 }
 ```
 
-enum 是一組由識別字所代表的整數常數
+### enum 是一組由識別字所代表的整數常數
 ```
 //除非特別指定，不然都是由0開始，接下來遞增1，例如以下語法：
 enum week{Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday};
@@ -252,7 +252,7 @@ int bitcount(unsigned int n)
 }
 ```
 
-## malloc free
+## malloc/free
 ### 一維陣列
 這是使用 malloc 與 free 配置一維動態陣列的例子。
 ```
