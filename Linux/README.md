@@ -1,4 +1,4 @@
-## Commom Command
+## 常見 Linux Terminal 指令
 ```
 mkdir: Make Directory
 cd: Change Directory
@@ -6,7 +6,6 @@ cd: Change Directory
 pwd: Print Working Directory
 ls: List
 grep: Global Regular Expression Print
-
 
 touch: The touch command allows you to create a blank new file through the Linux command line
 	- touch filename
