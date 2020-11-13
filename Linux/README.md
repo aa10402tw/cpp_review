@@ -35,6 +35,9 @@ hostname: the name of your host/network
 ping: check your connectivity status to a server
 	- ping google.com
 wget: download files from the internet
+curl: 是一個在 Linux 上用來透過 HTTP Protocol（HTTP HyperText Transfer Protocol 定義存取網路資源的協定，讓我們可以使用 client / server 模式來取得網路資源）下載和上傳檔案的指令（比起 wget 只能下載強大許多）
+ssh: secure connection to the SSH server on a remote machine
+	- ssh hostname command (remote machine)
 
 kill: terminate program (kill [signal option] PID.)
 top: display a list of running processes and how much CPU each process uses

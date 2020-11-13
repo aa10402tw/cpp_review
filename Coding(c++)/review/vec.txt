@@ -1,0 +1,16 @@
+
+/* Copy vector 
+vec2.assign(vec.begin(), vec.end());
+*/
+
+/* sort vector of class
+/* STL sort custom compator 
+
+bool compareInterval(std::vector<int> i1, std::vector<int> i2) {
+	return (i1[0] < i2[0]);
+}
+
+std::sort(intervals.begin(), intervals.end(), compareInterval);
+
+*/
+*/
