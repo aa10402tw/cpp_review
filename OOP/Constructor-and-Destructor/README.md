@@ -75,3 +75,18 @@ Point(int i = 0, int j = 0): x(i), y(j) {}
 Equal to 
 Point(int i = 0, int j = 0) { x = i; y = j; } 
 */
+
+
+``` 
+constructor and destructor order
+class Base{
+    ...
+};
+Class Derived:public Base{
+    ...
+}
+
+Base* base = new Derived(); // Base Constructor -> Derived Constructor 
+delete base;  // (if virtual destructor in Base :Derived Destuctor) -> Base Destructor 
+
+```
