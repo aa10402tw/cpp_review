@@ -15,7 +15,7 @@
     - 高階處理：執行與視覺相關的認知功能
     - 影像處理著重在低階以及中階處理
 
-<img src="DSP.png" >
+<img src="img/DSP.png" >
 
 ### 光源與電磁頻譜
 - 波長 (lambda)  = 頻率 (v) / 光速 (C)
@@ -104,7 +104,7 @@
         - 根據輸入圖片的直方圖計算強度轉換函數
         - 對比度強化的特性：A>=B->f(A)>=f(B)，多對一，可能有些灰階cnt=0
         - 演算法步驟：計算 pmf or imgHist -> 計算 cdf -> 計算轉換函數 s = T(r)
-        <img src="HE.png" >
+        <img src="img/HE.png" >
 - Spatial Domain Example
     - g(x,y) = T[f(x,y)]
     - T 常用 x,y 之鄰近區塊，且採用 Sliding Window, 稱為 mask/filter/kernel 
@@ -123,20 +123,20 @@
 - 傅立葉轉換：任何**非週期性函數**可藉由一個加權函數來表達 sin 及 cos 相乘的積分和
     - 非週期性函數：找不到固定循環的週期T
     - **Fourier transform** 
-    <img src="fourier.png">
+    <img src="img/fourier.png">
     - **Discrete fourier transform**
-    <img src="dft.png">
+    <img src="img/dft.png">
     - Fast Fourier Transform (將運算分離 O(N^2)->O(NlogN))
 - Convolution 
     - 定義
-    <img src="convolve.png">
+    <img src="img/convolve.png">
     - 在 frequency domain 相乘 = spatial domain convolve [f(t)*h(t)<->H(u)F(u)]
     - 在 frequency domain convolve = spatial domain 相乘 [f(t)h(t)<->H(u)*F(u)]
 - 2D Fourier Transform
     - Continuous
-    <img src="2dft.png">
+    <img src="img/2dft.png">
     - Discrete
-    <img src="2ddft.png">
+    <img src="img/2ddft.png">
     - 性質
     - 數位影像經過傅立葉轉換後，低頻對應到能量最強的部份（影像輪廓）
         - 可用來平滑
@@ -371,7 +371,7 @@ process to recover the original image.
     - Minimum mean square error filtering (Wiener)
     - Constrained least squares filtering
     - Geometric mean filter
-<img src="noise.png" >
+<img src="img/noise.png" >
 
 ## Image Segmentation
 - 目標：切多個區域，每個區域內的 Property 相似
