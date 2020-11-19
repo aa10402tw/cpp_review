@@ -39,7 +39,7 @@
     - FoV 視野範圍
     - Resolution 解析度
     - Working Distance 工作距離
-    - DoF 景深
+    - DoF 景深：景深是指相機對焦點前後相對清晰的成像範圍
 - 3D 成像
     - 兩個以上相機，用特徵點重建深度（適合有特徵點的）
     - 投射光斑，利用兩個相機重建深度（適合平滑）
@@ -234,7 +234,7 @@
 ### Aliasing
 - 發生在 sample rate 不夠高的時候
 - causes different signals to become indistinguishable (or aliases of one another) when sampled. It also often refers to the distortion or artifact that results when a signal reconstructed from samples is different from the original continuous signal.
-<img src = "Aliasing.png" width="90%">
+<img src = "img/Aliasing.png" width="90%">
 
 - Aliasing effect
     - 當用頻率Fs對一個更高頻率的信號f進行採樣時，高頻信號中Fs / 2以上的頻率信號並不會自動消失，而是對稱地映射到Fs / 2以下的頻譜中，和 的Fs / 2以下的頻率成分重疊起來，表現出實際場景中並不存在的模式，這種模式稱為偽影（artifact）
@@ -250,7 +250,7 @@
 Histogram灰階影像的直方圖，可以推論出影像大致上的特性。
 -   較暗的影像灰階值聚集在數值低的區域，
 -   整體亮的或曝光過度的灰階值聚集在數值高的區域，對比均衡灰階值平均分散於所有範圍。
-<img src = "Histogram-Equalization.png" width = "70%"> <br/>
+<img src = "img/Histogram-Equalization.png" width = "70%"> <br/>
 可以發現 Adaptive Equalization(適應性等化)讓圖片的品質更好，有點像高斯分佈。
 
 ### Neighborhood Processing
@@ -267,7 +267,7 @@ Percentile and usual mean give here similar results, these filters smooth the co
 將 0-255 變成 0-1
 -   可用 threshold, local threshold, OTSU 等演算法
 
-<img src = "Binarization.png" width = "50%"><img src = "Binarization2.png" width = "30%"> <br/>
+<img src = "img/Binarization.png" width = "50%"><img src = "Binarization2.png" width = "30%"> <br/>
 
 ### Edge detection
 - Sobel Filter
@@ -409,3 +409,64 @@ process to recover the original image.
 - 2.Gray-scale:灰階影像從0(黑)~255(白)，每個像素8位元。
 - 3.RGB:由紅藍綠調配深淺從0~255，有255的三次方需要用24-bit又稱24位元彩色影像。
 - 4.Indexed:大部分影像都只用到1600萬種可能顏色的一小部分。為了方便儲存及處理於是建立色譜(color map)或調色盤(color palette)。每個像素的值不代表像素的顏色，是代表色譜上對應顏色的索引(index) ex:GIF檔
+
+
+## Bilateral Filter
+雙邊濾波器 (Bilateral Filter)雙邊濾波器是個非線性的過濾器，在計算機圖形和影像處理領域中使影像模糊化，但同時能夠保留影像內容的邊緣。 <br/>
+結合兩個函數
+- 一個函數是由幾何空間距離決定濾波器係數，
+- 另一個由像素色差決定濾波器係數。
+<img src="img/biliteral.png">
+<img src="img/biliteral2.png">
+跟原始影像比起來有平滑，跟高斯比起來邊緣有保留
+
+## HDRI and Tone Mapping 
+[使用 OpenCV 进行高动态范围（HDR）成像](https://zhuanlan.zhihu.com/p/38176640) <br/>
+步驟：
+- 第 1 步：捕獲不同曝光度的多張圖像
+- 第 2 步：對齊圖像
+- 第 3 步：提取相機響應函數 (Camera Response Function)（CRF）
+- 第 4 步：合併圖像
+- 第 5 步：色調映射 (Tone Mapping)
+
+High Dynamic Range Images; HDRI
+高動態範圍影像(High Dynamic Range Images; HDRI)是紀錄真實環境的影像檔，但
+卻無法在顯示器中顯示其真實的內容，因為在真實的環境中，亮度範圍寬廣，若以數值
+來表示，其數值的種類為無限多，由於呈現影像裝置只能呈現有限種類數值的影像，所
+以高動態範圍影像若要呈現，就必須將其無限種類的數值轉換到有限種類的數值，這種
+轉換被稱之為色調映射(Tone Mapping)。
+色調映射方法基本上可分為兩大類：區域色調映射(Local Mapping)及全域色調映射
+(Global Mapping)。全域色調映射的優點就是簡單、速度快，在應用上若想快速知道影像
+的內容為何或即時顯示，全域映射是不錯的選擇。本論文的主要目的就是提出一個優質
+且良好的全域色調映射技術，論文中利用兩次映射的方法來完成高動態影像之色調映射，
+第一次映射是為了找出映射值只包含極少數像素的地方，此目的是防止過多的像素點映
+射在相同的地方，而使得影像中的細節喪失，因此有必要做適當的調整，調整後，就進
+行第二次映射。結果顯示，本論文所提之方法能有效的提升映射後的影像細節及對比的
+主觀品質。
+
+動態範圍（Dynamic Range）：在很多領域來表示某個變數的最大值和最小值的比值。在數字影象處理領域裡，動態範圍也被稱為影象對比度，表示影象可以顯示範圍內，畫素最大亮度值和最小亮度值的比值。高動態範圍影象（High Dynamic Range Image）:可以反映真實場景中高動態範圍亮度資訊影象。
+
+利用多張不同曝光的普通低動態範圍（LDR）影象直接利用計算機處理演算法合成高動態範圍影象。通常是用多張不同曝光照片，透過軟體合成，呈現亮暗部曝光細節皆清楚的影像，較能貼切描述真實世界中，從太陽光直射到最暗陰影的亮度範圍
+(1) 獲取高、中、低曝光的三幅影象；
+(2) 將三幅影象轉化到YUV空間，分離出Y、U、V資料；(「Y」表示明亮度（Luminance、Luma），「U」和「V」則是色度、濃度（Chrominance、Chroma）)
+(3) 在Y空間上進行影象配準，消除人手抖動造成的影響；
+
+現在我們已經將我們的曝光圖像合併到一個 HDR 圖像中。你能猜出這個圖像的最小和最大像素值嗎？對於黑色條件，最小值顯然為 0。理論最大值是什麼？無限大！在實踐中，不同情況下的最大值是不同的。如果場景包含非常明亮的光源，那麼最大值就會非常大。
+將高動態範圍（HDR）圖像轉換為 8 位單通道圖像的過程稱為色調映射。這個過程的同時還需要保留盡可能多的細節。
+
+
+## 3A
+### Auto Focus：自動對焦。
+[3A+ISP之AF篇](https://zhuanlan.zhihu.com/p/36359719)
+
+### Auto White Balance：自動白平衡。
+[3A+ISP之AWB篇](https://zhuanlan.zhihu.com/p/36221515)
+什麼是白平衡呢？白平衡就是針對不同色溫條件下，通過調整攝像機內部的色彩電路使拍攝出來的影像抵消偏色，更接近人眼的視覺習慣。白平衡可以簡單地理解為在任意色溫條件下，攝像機鏡頭所拍攝的標準白色經過電路的調整，使之成像後仍然為白色。這是一種經常出現的情況，但不是全部，白平衡其實是通過攝像機內部的電路調整（改變藍、綠、紅三個CCD電平的平衡關係）使反射到鏡頭裡的光線都呈現為消色。
+光線（攝影的基礎）在一天中的不同時間具有可變的色溫。 您的眼睛在處理色彩方面比數碼相機要好得多。 因此，即使有條件，白色物體也會始終對您呈現白色。 白平衡是相機用來消除由這些不同色溫產生的色偏的過程，可幫助您的相機模仿當處理白色時我們的眼睛自然地做什麼。“自動白平衡”設置可評估您的場景，並選擇圖像中最亮的部分作為白點，不幸的是，白點可能會因一次拍攝而不同。 但是，多年來，AWB系統已經取得了重大改進，並且效果越來越好。 即使有了這些發展，自動白平衡也難以校正某些種類的照明（例如人工照明或組合照明設置）。 不建議使用AWB的另一種情況是在全景拍攝時，因為您可能會在縫合的圖像上改變光線。
+
+### Auto Exposure：自動曝光。
+[3A+ISP之AE篇](https://zhuanlan.zhihu.com/p/36116026)
+AE的基本概念：Auto Exposure即自動曝光，是相機根據外界光線的強弱自動調整曝光量和增益，防止曝光過度或者不足的一種機制。
+
+## Noise Reduction
+[Image Process Pipe Line 之NR](https://zhuanlan.zhihu.com/p/41238288)
