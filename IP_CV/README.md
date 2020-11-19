@@ -144,7 +144,6 @@
     - 高頻對應到變動劇烈，（影像細節）
         - 可用來銳化（原始+高通後圖片）
 
-
 ### Low pass filter 通常解決雜訊 (smooth)
 - Ideal -> ringing effect (cliff)
 - Butterworth -> reduce ringing effect (n調整衰減幅度)
